@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Секретная база данных</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+      body{
+        margin: 0;
+        padding: 0;
+        background-image: url('bg.jpeg');
+        height: 100vh;
+        font-family: Poiret one;
+      }
+      main{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      form{
+        padding: 20px;
+        background: #2a3c53d6;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+      form label{
+        color: #c0d5d3;
+        margin: 0 0 10px 0;
+      }
+      form input{
+        color: #70f2f9;
+        background: #183e66e3;
+        border: none;
+        border-radius: 5px;
+      }
+      form button{
+        background: #183e66e3;
+        color: #70f2f9;
+        border-radius: 5px;
+        border: 1px solid #0f0364;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: bold;
+      }
+      form button:hover{
+        color: #183e66;
+        background: #70f2f9;
+        border-color: #70f2f9;
+        border-radius: 8px;
+      }
+      .hide{
+        display: none;
+      }
+      .purpose{
+        padding: 20px 30px;
+        background: #183e66e3;
+        color: #70f2f9;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .purpose .title{
+        margin: 0 0 10px 0;
+        font-size: 1.2em;
+      }
+      .purpose img{
+        max-width: 500px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <form action="#" class="">
+        <label>
+          Кодовое слово:<br>
+          <input type="text"><br>
+        </label>
+        <button>Войти</button>
+      </form>
+      <div class=" hide purpose">
+        <div class="title">Ваша цель, агент:</div>
+        <img src="shkaf.jpg" alt="">
+      </div>
+    </main>
+    <footer></footer>
+    <script type="text/javascript">
+      let form = document.querySelector('form');
+      let inp = form.querySelector('input');
+      let butt = form.querySelector('button');
+      let purpose = document.querySelector('.purpose');
+      butt.addEventListener('click', autorize);
+
+      function autorize(e){
+        e.preventDefault();
+        if(inp.value.toLowerCase() == "песочек"){
+          form.classList.add('hide');
+          purpose.classList.remove('hide');
+        }else{
+          alert('Обнаружен шпивон, включена система безопасности!');
+        }
+      }
+    </script>
+  </body>
+</html>
